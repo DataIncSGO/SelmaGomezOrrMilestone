@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="http://cdn.pydata.org/bokeh/release/bokeh-0.9.2.min.css" type="text/css" />
+    <script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-0.9.2.min.js"></script>
+    {{ script | safe }}
+  </head>
+  <body>
+    <div class=page>
+      <h1>Generated Graph for {{symb}}</h1>
+      <h4>Would you like to try another stock? <form><input type='submit' value='Next Stock' action='next_ticker'/></form></h4>   
+      {{ div | safe }}
+    </div>
+  </body>
+</html>
