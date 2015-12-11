@@ -4,7 +4,7 @@
 ## Imports for application
 ##########################################################################
 
-#import os
+
 from flask import Flask, render_template, request, redirect
 
 import requests
@@ -12,7 +12,6 @@ import pandas as pd
 from datetime import datetime
 
 from bokeh.plotting import figure
-#from bokeh.resources import CDN
 from bokeh.embed import components
 
 ##########################################################################
