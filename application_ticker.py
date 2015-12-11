@@ -48,7 +48,7 @@ def index_ticker():
         data_df['Date'] = pd.to_datetime(data_df['Date'], format='%Y-%m-%d')
         
         #Define the data points for the graph as the last month, or thirty days.
-        x = data_df['Open'][:30]
+        x = data_df['Date'][:30]
         y = data_df['Close'][:30]
         
         #Define the graph.        
