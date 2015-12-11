@@ -8,10 +8,10 @@ from flask import Flask, render_template, request, redirect
 
 import requests
 import pandas as pd
-from datetime import datetime
+#from datetime import datetime
 
 from bokeh.plotting import figure
-from bokeh.resources import CDN
+#from bokeh.resources import CDN
 from bokeh.embed import components
 
 ##########################################################################
@@ -45,10 +45,10 @@ def index_ticker():
         
         #Put data into a pandas dataframe and format the date string to a date.
         data_df = pd.DataFrame(data_list, columns = headers)
-        data_df['Date'] = pd.to_datetime(data_df['Date'], format='%Y-%m-%d')
+        #data_df['Date'] = pd.to_datetime(data_df['Date'], format='%Y-%m-%d')
         
         #Define the data points for the graph as the last month, or thirty days.
-        x = data_df['Date'][:30]
+        x = data_df['Open'][:30]
         y = data_df['Close'][:30]
         
         #Define the graph.        
