@@ -1,7 +1,7 @@
 # Author: Selma Gomez Orr <selmagomezorrds@gmail.com> December 9, 2015
 
 ##########################################################################
-## Imports
+## Imports for application
 ##########################################################################
 
 from flask import Flask, render_template, request, redirect
