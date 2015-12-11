@@ -8,7 +8,7 @@ from flask import Flask, render_template, request, redirect
 
 import requests
 import pandas as pd
-#from datetime import datetime
+from datetime import datetime
 
 from bokeh.plotting import figure
 #from bokeh.resources import CDN
@@ -33,28 +33,26 @@ def index_ticker():
         STOCK = request.form['name_ticker']
         
         #Get the stock closing price data for the requested stock.
-        #api_url = 'https://www.quandl.com/api/v1/datasets/WIKI/%s.json' % STOCK
-        #session = requests.Session()
-        #session.mount('http://', requests.adapters.HTTPAdapter(max_retries=3))
-        #raw_data = session.get(api_url)
+        api_url = 'https://www.quandl.com/api/v1/datasets/WIKI/%s.json' % STOCK
+        session = requests.Session()
+        session.mount('http://', requests.adapters.HTTPAdapter(max_retries=3))
+        raw_data = session.get(api_url)
         
         #Turn request object into json and extract the headers and the stock data.
-        #data = raw_data.json()
-        #headers = data["column_names"]
-        #data_list = data["data"]
+        data = raw_data.json()
+        headers = data["column_names"]
+        data_list = data["data"]
         
         #Put data into a pandas dataframe and format the date string to a date.
-        #data_df = pd.DataFrame(data_list, columns = headers)
-        #data_df['Date'] = pd.to_datetime(data_df['Date'], format='%Y-%m-%d')
+        data_df = pd.DataFrame(data_list, columns = headers)
+        data_df['Date'] = pd.to_datetime(data_df['Date'], format='%Y-%m-%d')
         
         #Define the data points for the graph as the last month, or thirty days.
-        #x = data_df['Open'][:30]
-        #y = data_df['Close'][:30]
-	x=[0,1,2,3,4]
-	y=[0,1,2,3,4]
+        x = data_df['Open'][:30]
+        y = data_df['Close'][:30]
         
         #Define the graph.        
-        p = figure(title="Data from Quandl WIKI set", x_axis_label='Date', y_axis_label='Price')
+        p = figure(title="Data from Quandl WIKI set", x_axis_label='Date', x_axis_type='datetime', y_axis_label='Price')
         
         p.line(x, y, legend=STOCK+': Close', line_width=2)
         
