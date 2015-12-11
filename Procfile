@@ -1,1 +1,1 @@
-web: gunicorn application_ticker:app_ticker
+web: gunicorn application_ticker:app_ticker --log-file=-
