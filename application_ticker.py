@@ -54,7 +54,7 @@ def index_ticker():
 	y=[0,1,2,3,4]
         
         #Define the graph.        
-        p = figure(title="Data from Quandl WIKI set", x_axis_label='Date', x_axis_type='datetime', y_axis_label='Price')
+        p = figure(title="Data from Quandl WIKI set", x_axis_label='Date', y_axis_label='Price')
         
         p.line(x, y, legend=STOCK+': Close', line_width=2)
         
