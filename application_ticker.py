@@ -11,6 +11,7 @@ import pandas as pd
 from datetime import datetime
 
 from bokeh.plotting import figure
+from bokeh.resources import CDN
 from bokeh.embed import components
 
 ##########################################################################
