@@ -49,7 +49,7 @@ def index_ticker():
         #Define the data points for the graph as the last month, or thirty days.
         x = data_df['Date'][:30]
         y = data_df['Close'][:30]
-        
+        print x[1]
         #Define the graph.        
         p = figure(title="Data from Quandl WIKI set", x_axis_label='Date', x_axis_type='datetime', y_axis_label='Price')
         
