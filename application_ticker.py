@@ -4,7 +4,7 @@
 ## Imports for application
 ##########################################################################
 
-import os
+#import os
 from flask import Flask, render_template, request, redirect
 
 import requests
@@ -73,6 +73,5 @@ def next_ticker():
 ##########################################################################
     
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app_ticker.run(host='0.0.0.0', port=port)
+    app_ticker.run(host='0.0.0.0', port=5000)
     
